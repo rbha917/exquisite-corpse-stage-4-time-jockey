@@ -26,6 +26,8 @@ function setup() {
   textFont("Courier New");
   textStyle(BOLD);
   textSize(16);
+
+  intro();
 }
 
 function intro() {
@@ -130,5 +132,5 @@ function end() {
 }
 
 function draw() {
-  intro();
+  
 }
