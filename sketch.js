@@ -10,6 +10,7 @@ let carrots;
 let left, right, up, down;
 let hay;
 let carrot;
+let retry;
 
 function preload(){
   mix1 = loadImage ('images/mix1.png');
@@ -107,9 +108,7 @@ function snowmix (){
   text('You went through a portal to another dimension, find the checkbox to escape', 500, 100);
   checkbox = createCheckbox();
   checkbox.position(350, 500);
-  if (checkbox.checked()){
-    end3();
-  }
+  checkbox.changed(end3);
 }
 
 function sunmix (){
@@ -126,9 +125,7 @@ function sunmix (){
   text('You went through a portal to another dimension, find the checkbox to escape', 500, 100);
   checkbox2 = createCheckbox();
   checkbox2.position(900, 500);
-  if (checkbox2.checked()){
-    end4();
-  }
+  checkbox2.changed(end4);
 }
 
 function end1() {
@@ -141,8 +138,6 @@ function end1() {
   text('Congrats, you made it back to field, let this be a lesson not to eat whatever you see in your path', 500, 100);
   right.remove();
   left.remove();
-  up.remove();
-  down.remove();
 }
 
 function end2() {
@@ -177,5 +172,6 @@ function end4() {
   fill(0);
   text('Congrats, you made it back to field, let this be a lesson not to eat whatever you see in your path', 500, 100);
   checkbox2.remove();
+  
 }
 
